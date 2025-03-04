@@ -1,6 +1,8 @@
 <h1>boas</h1>
 <ul>
-<% @tasks.each do |task_info|  %>
-  <li><%= link_to task_info.title, task_path(task_info.id) %></li>
-<% end %>
+  <% @tasks.each do |task_info|  %>
+    <li><%= link_to task_info.title, task_path(task_info.id) %> - <%= task_info.completed %></li>
+  <% end %>
 </ul>
+
+<%= link_to "Create new task", new_path %>
